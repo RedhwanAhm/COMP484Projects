@@ -4,12 +4,54 @@
     box-sizing: border-box;
     scroll-behavior: smooth;
     font-family: 'Poppins', sans-serif;
+    color: white;
 }
 body {
     background-color: black;
 }
 .headers {
     font-family: 'Prompt', sans-serif;
+}
+
+nav {
+    height: 65px;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position:absolute;
+}
+
+.nav-elements {
+    width: fit-content;
+}
+
+.nav-elements > .nav-element{
+    display: inline-block;
+    margin: 15px;
+}
+
+.nav-elements > .nav-element > a {
+    font-family: 'Prompt', sans-serif;
+    font-weight: 400;
+    font-size: 1.1em;
+    text-decoration: none;
+    transition: text-shadow 175ms linear;
+}
+
+a:hover{
+    text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.9);
+}
+
+#nav-focus {
+    color: #ffcc00;
+    font-weight: 800;
+    text-shadow: 0px 0px 10px rgba(255,240,11,0.5);
+    transition: text-shadow 175ms linear;
+}
+
+#nav-focus:hover {
+    text-shadow: 0px 0px 10px rgb(255, 234, 0);
 }
 
 header {
@@ -19,7 +61,7 @@ header {
     height: 100vh;
     background-image: url(/COMP484Projects/comp484-project1/assets/photos/1.jpg);
     background-repeat: no-repeat; 
-    background-size: 80%;
+    background-size: 70%;
     background-position: right;
 }
 
@@ -27,29 +69,78 @@ header {
     height:fit-content;
     width: 610px;
     position:absolute;
-    left: 250px;
+    left: 200px;
+    text-shadow: 0px 0px 10px rgba(0,0,0,0.7);
+}
+
+.head-h1 {
+    height: 64px;
+}
+
+.head-h2 {
+    height: 48px;
+    margin: 10px 0 25px 0;
 }
 
 h1 {
-    color: rgb(255, 204, 0);
+    color: #ffcc00;
     font-size: 4em;
     height: min-content;
 }
 
 h2 {
-    font-size: 3em;
+    font-size: 2.5em;
     font-weight: 600;
     font-style: italic;
 }
 
-.book-purpose {
-    height: 100vh;
-    width: 100vw;
-    background-color: rgb(19, 19, 36);
+.head-info span {
+    color: rgb(209, 177, 238);
+    font-family: 'Prompt', sans-serif;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 1.2em;
 }
 
-.book-remarks {
+.book-description {
     height: 100vh;
     width: 100vw;
-    background-color: rgb(28, 10, 10);
+    background: black;
+}
+
+.book-desc-h1 {
+    margin-top: 50px;
+    font-size: 3em;
+    font-weight: 600;
+    text-align: center;
+}
+
+.rdpd-cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.rdpd-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background: rgb(58,40,78);
+    background: linear-gradient(0deg, rgba(58,40,78,1) 0%, rgb(25, 16, 61) 100%);
+    border-radius: 10px;
+    height: 325px;
+    width: 250px;
+    padding: 20px;
+    margin: 10px;
+}
+
+.card-img {
+    height: 30%;
+    width: 40%;
+}
+
+.card-info {
+    font-size: 1em;
+    text-align: center;
 }
