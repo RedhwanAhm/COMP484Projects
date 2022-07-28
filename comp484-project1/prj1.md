@@ -6,7 +6,7 @@ This project consists of **5 main files**
 1. 4 HTML Files
 2. 1 CSS File for styling
 3. Use 3 unique elements that haven't been discussed in the class lectures
-    - I've chosen to do **<base>, <legend>, and <blockquote>** and the **target, lang, tabindex attributes.**
+    - I've chosen to do **<base>, <legend>, and <blockquote>** and the **vspace, longdesc, tabindex.**
 
 ## Grading basis:
 - Submission instructions followed (4 html and 1 css file included in your project)
