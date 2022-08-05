@@ -8,12 +8,21 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;0,800;0,900;1,700;1,800&display=swap" rel="stylesheet">
 
     <!-- Style Sheet -->
     <link rel="stylesheet" href="assets/styles/styles.css">
     <title>Redhwan Ahmed | Resume</title>
 </head>
 <body>
+    <nav id="home">
+        <div class="nav-container">
+            <a href="#home">Home</a>
+            <a href="#workexp">Experience</a>
+            <a href="#education">Education</a>
+        </div>
+
+    </nav>
     <!-- // Intro -->
     <header>
         <img src="assets/images/me.png" alt="Redhwan Ahmed">
@@ -21,9 +30,15 @@
             <div class="inner-wrapper">
                 <h1>Redhwan Ahmed</h1>
                 <h2>Software Engineer</h2>
-                <p>B.S. Candidate at CSU Northridge studying Computer Science with an emphasis in Front End Web Design and Development.</p>
-                <p>2022 Summer Software Engineer Intern at AT&T TDP.</p>
-                <p>President of the CSU Northridge Muslim Student Association.</p>
+                <p>
+                    <span class="fancy-line">B.S. Candidate at CSU Northridge studying Computer Science with an emphasis in Front End Web Design and Development.</span>
+                </p>
+                <p>
+                    <span class="fancy-line">2022 Summer Software Engineer Intern at AT&T TDP.</span>
+                </p>
+                <p>
+                    <span class="fancy-line">President of the CSU Northridge Muslim Student Association.</span>
+                </p>
             </div>
             
         </div>
@@ -32,7 +47,7 @@
     
     <main> 
         <!-- // Work Experience -->
-        <section class="wrk-exp">
+        <section class="wrk-exp" id="workexp">
             <h2>Work Experience</h2>
             <!-- Job Details: copy this whole block to add more jobs -->
             <div class="wrk-exp-wrapper">
@@ -47,16 +62,16 @@
 
                 <div class="wrk-exp-details">
                     <p>
-                        Collaborated and contributed in a large Agile team building front-end features for an internal AT&T application that is used by tens of thousands of employees every month.
+                        Collaborated and contributed in a large Agile team building front-end features for an <span class="fancy-line">internal AT&T application that is used by tens of thousands of employees every month.</span>
                     </p>
                     <p>
-                        Collaborated with business partners clients to help them build out landing pages for their organizations. Many pushed to production.
+                        Collaborated with business partners clients to help them build out landing pages for their organizations. <span class="fancy-line">Many pushed to production.</span>
                     </p>
                     <p>
-                        Proposed a solution to streamline and optimize developers programming workflows within the Agile team.
+                        <span class="fancy-line">Proposed a solution to streamline and optimize developers programming workflows within the Agile team.</span>
                     </p>
                     <p>
-                        Designed and implemented code for the AT&T Intern Innovation Challenge with a team of 6 other interns.
+                        <span class="fancy-line">Designed and implemented code for the AT&T Intern Innovation Challenge with a team of 6 other interns.</span>
                     </p>
                 </div>
             </div>
@@ -73,19 +88,19 @@
 
                 <div class="wrk-exp-details">
                     <p>
-                        Mentoring students in their classes and providing motivation to push them further in their studies and apply their knowledge.
+                        <span class="fancy-line">Mentoring students in their classes and providing motivation</span> to push them further in their studies and apply their knowledge.
                     </p>
                     <p>
-                        Helping students in high-risk classes learn and understand deeper concepts in Computer Science such as data structures and algorithms.
+                        <span class="fancy-line">Helping students in high-risk classes learn and understand deeper concepts in Computer Science</span> such as data structures and algorithms.
                     </p>
                     <p>
-                        Helped close to a hundred students pass in the time I worked.
+                        <span class="fancy-line">Helped close to a hundred students pass in the time I worked.</span>
                     </p>
                     <p>
-                        Proficiency with Zoom and hosting online tutoring sessions.
+                        <span class="fancy-line">Proficiency with Zoom and hosting online tutoring sessions.</span>
                     </p>
                     <p>
-                        Clerical: Logging students in using MS Excel. Excellent communication skills.
+                        <span class="fancy-line">Clerical: Logging students in using MS Excel. Excellent communication skills.</span>
                     </p>
                 </div>
             </div>
@@ -94,7 +109,7 @@
 
 
         <!-- // Education -->
-        <section class="edu">
+        <section class="edu" id="education">
             <h2>Education</h2>
 
             <!-- School details: copy this whole block to add more schools. -->
@@ -104,6 +119,7 @@
                         <h3>Bachelors of Science, Computer Science</h3>
                         <div class="comp-date">
                             <p>Cal State University Northridge</p>
+                            <div class="point"></div>
                             <p>Aug 2018 - May 2023</p>
                         </div>
                     </div>
