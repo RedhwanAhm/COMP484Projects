@@ -64,6 +64,7 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
       updateChonkLevel();
       checkWeightAndHappinessBeforeUpdating();  
       updatePetInfoInHtml();
+      getWider();
     }
     
     function checkWeightAndHappinessBeforeUpdating() {
@@ -74,6 +75,13 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
       if(pet_info['happiness'] < 0) {
         pet_info['happiness'] = 0;
       }
+    }
+
+    //this function makes yoshi wider and wider.
+    function getWider() {
+      var yoshi = document.querySelector(".pet-image");
+      console.dir(yoshi);
+      yoshi.style.transform = "scaleX("+(pet_info['chonkiness']/100)+ ")";
     }
 
     // This function disables all buttons when one is pressed to ensure that too many things aren't able to be done at once.
