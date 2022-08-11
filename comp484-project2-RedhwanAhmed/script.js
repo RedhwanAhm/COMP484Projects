@@ -24,7 +24,7 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
       pet_info['weight']+=25;
       disableAllButtons();
       checkAndUpdatePetInfoInHtml();
-      actionNotification("+1 Happiness, +25 Weight. The Chonk is satisfied.");
+      actionNotification("+1 Happiness, +25 Weight. Mmmm cake...");
 
     }
     
