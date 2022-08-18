@@ -159,6 +159,7 @@ body {
 
 .test-wrapper textarea {
     flex: 1;
+    padding: 15px
 }
 
 .meta {
@@ -173,8 +174,38 @@ body {
     font-weight: bold;
 }
 
+/* Added these three for ease of use. */
 .quote {
-    color: rgb(51, 103, 85);
+    font-weight: bold;
+}
+
+.correct {
+    color: rgb(0, 132, 0);
+}
+
+.incorrect {
+    color: red;
+    text-decoration: line-through;
+}
+
+/*-----------------------------------*/
+#speed {
+    width: 100px;
+}
+.wpm-count {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.wpm-count .wpm {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.congrats p {
+    text-align: center;
+    font-size: 3rem;
     font-weight: bold;
 }
 
