@@ -13,6 +13,7 @@ const questionContent = [
     "5. Where is Magnolia Hall?"
 ];
 
+// Coordinates for boxes:
 const coords = {
     "eucalyptus": {
         north: 34.2387516328497, 
@@ -50,15 +51,18 @@ const coords = {
     }
 }
 
-var qNum = 0;
-var correct = 0;
-var incorrect = 0;
+// Variables for counting.
+var qNum = 0; // index
+var correct = 0; // number correct
+var incorrect = 0; // number incorrect
 
 // Enable first question:
 questionsAnswers[qNum].children[0].innerHTML = questionContent[qNum];
 
 // Google Map Initialization
 function initMap() {
+
+    // Custom Styles: https://mapstyle.withgoogle.com/
     var customStyled = [
         {
           "elementType": "geometry",
@@ -307,8 +311,9 @@ function initMap() {
             }
           ]
         }
-      ];
+    ];
 
+    // Set the options beforehand and just call inside of the initialize method.
     var options = {
         zoom: 18,
         maxZoom:18,
@@ -325,9 +330,14 @@ function initMap() {
             lat: 34.238254986486005, lng: -118.52634378704525
         }
     };
+    // initialize the map
     const map = 
         new google.maps.Map(document.getElementById('map'), options);
+    
+    // import the JSON styles created above
     map.set('styles', customStyled);
+
+    // Event Listener
     map.addListener("dblclick", (mapsMouseEvent) => {
         var latitude = mapsMouseEvent.latLng.toJSON()['lat'];
         var longitude = mapsMouseEvent.latLng.toJSON()['lng'];
