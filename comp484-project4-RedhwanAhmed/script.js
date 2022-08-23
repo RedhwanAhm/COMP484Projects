@@ -61,6 +61,14 @@ questionsAnswers[qNum].children[0].innerHTML = questionContent[qNum];
 function initMap() {
     var customStyled = [
         {
+          "elementType": "geometry",
+          "stylers": [
+            {
+              "color": "#1d2c4d"
+            }
+          ]
+        },
+        {
           "elementType": "labels",
           "stylers": [
             {
@@ -69,10 +77,36 @@ function initMap() {
           ]
         },
         {
-          "featureType": "administrative.land_parcel",
+          "elementType": "labels.text.fill",
           "stylers": [
             {
-              "visibility": "off"
+              "color": "#8ec3b9"
+            }
+          ]
+        },
+        {
+          "elementType": "labels.text.stroke",
+          "stylers": [
+            {
+              "color": "#1a3646"
+            }
+          ]
+        },
+        {
+          "featureType": "administrative.country",
+          "elementType": "geometry.stroke",
+          "stylers": [
+            {
+              "color": "#4b6878"
+            }
+          ]
+        },
+        {
+          "featureType": "administrative.land_parcel",
+          "elementType": "labels.text.fill",
+          "stylers": [
+            {
+              "color": "#64779e"
             }
           ]
         },
@@ -83,8 +117,198 @@ function initMap() {
               "visibility": "off"
             }
           ]
+        },
+        {
+          "featureType": "administrative.province",
+          "elementType": "geometry.stroke",
+          "stylers": [
+            {
+              "color": "#4b6878"
+            }
+          ]
+        },
+        {
+          "featureType": "landscape.man_made",
+          "elementType": "geometry.stroke",
+          "stylers": [
+            {
+              "color": "#334e87"
+            }
+          ]
+        },
+        {
+          "featureType": "landscape.natural",
+          "elementType": "geometry",
+          "stylers": [
+            {
+              "color": "#023e58"
+            }
+          ]
+        },
+        {
+          "featureType": "poi",
+          "elementType": "geometry",
+          "stylers": [
+            {
+              "color": "#283d6a"
+            }
+          ]
+        },
+        {
+          "featureType": "poi",
+          "elementType": "labels.text.fill",
+          "stylers": [
+            {
+              "color": "#6f9ba5"
+            }
+          ]
+        },
+        {
+          "featureType": "poi",
+          "elementType": "labels.text.stroke",
+          "stylers": [
+            {
+              "color": "#1d2c4d"
+            }
+          ]
+        },
+        {
+          "featureType": "poi.park",
+          "elementType": "geometry.fill",
+          "stylers": [
+            {
+              "color": "#023e58"
+            }
+          ]
+        },
+        {
+          "featureType": "poi.park",
+          "elementType": "labels.text.fill",
+          "stylers": [
+            {
+              "color": "#3C7680"
+            }
+          ]
+        },
+        {
+          "featureType": "road",
+          "elementType": "geometry",
+          "stylers": [
+            {
+              "color": "#304a7d"
+            }
+          ]
+        },
+        {
+          "featureType": "road",
+          "elementType": "labels.text.fill",
+          "stylers": [
+            {
+              "color": "#98a5be"
+            }
+          ]
+        },
+        {
+          "featureType": "road",
+          "elementType": "labels.text.stroke",
+          "stylers": [
+            {
+              "color": "#1d2c4d"
+            }
+          ]
+        },
+        {
+          "featureType": "road.highway",
+          "elementType": "geometry",
+          "stylers": [
+            {
+              "color": "#2c6675"
+            }
+          ]
+        },
+        {
+          "featureType": "road.highway",
+          "elementType": "geometry.stroke",
+          "stylers": [
+            {
+              "color": "#255763"
+            }
+          ]
+        },
+        {
+          "featureType": "road.highway",
+          "elementType": "labels.text.fill",
+          "stylers": [
+            {
+              "color": "#b0d5ce"
+            }
+          ]
+        },
+        {
+          "featureType": "road.highway",
+          "elementType": "labels.text.stroke",
+          "stylers": [
+            {
+              "color": "#023e58"
+            }
+          ]
+        },
+        {
+          "featureType": "transit",
+          "elementType": "labels.text.fill",
+          "stylers": [
+            {
+              "color": "#98a5be"
+            }
+          ]
+        },
+        {
+          "featureType": "transit",
+          "elementType": "labels.text.stroke",
+          "stylers": [
+            {
+              "color": "#1d2c4d"
+            }
+          ]
+        },
+        {
+          "featureType": "transit.line",
+          "elementType": "geometry.fill",
+          "stylers": [
+            {
+              "color": "#283d6a"
+            }
+          ]
+        },
+        {
+          "featureType": "transit.station",
+          "elementType": "geometry",
+          "stylers": [
+            {
+              "color": "#3a4762"
+            }
+          ]
+        },
+        {
+          "featureType": "water",
+          "elementType": "geometry",
+          "stylers": [
+            {
+              "color": "#0e1626"
+            }
+          ]
+        },
+        {
+          "featureType": "water",
+          "elementType": "labels.text.fill",
+          "stylers": [
+            {
+              "color": "#4e6d70"
+            }
+          ]
         }
-    ];
+      ];
+
     var options = {
         zoom: 18,
         maxZoom:18,
@@ -95,9 +319,8 @@ function initMap() {
         mapTypeControl: false,
         fullscreenControl: false,
         streetViewControl: false,
-        mapTypeId: "satellite",
+        mapTypeId: "roadmap",
         tilt: 0,
-        heading: 0,
         center: {
             lat: 34.238254986486005, lng: -118.52634378704525
         }
@@ -112,10 +335,10 @@ function initMap() {
             case 0:
                 if ((latitude >= coords['eucalyptus']['south'] && latitude <= coords['eucalyptus']['north']) && (longitude >= coords['eucalyptus']['west'] && longitude <= coords['eucalyptus']['east'])) {
                     const eucalyptus = new google.maps.Rectangle({
-                        strokeColor: "#104f00",
+                        strokeColor: "#47ffc2",
                         strokeOpacity: 0.8,
                         strokeWeight: 2,
-                        fillColor: "#104f00",
+                        fillColor: "#47ffc2",
                         fillOpacity: 0.2,
                         map,
                         bounds: {
@@ -155,10 +378,10 @@ function initMap() {
             case 1:
                 if ((latitude >= coords['liveOak']['south'] && latitude <= coords['liveOak']['north']) && (longitude >= coords['liveOak']['west'] && longitude <= coords['liveOak']['east'])) {
                     const liveOak = new google.maps.Rectangle({
-                        strokeColor: "#104f00",
+                        strokeColor: "#47ffc2",
                         strokeOpacity: 0.8,
                         strokeWeight: 2,
-                        fillColor: "#104f00",
+                        fillColor: "#47ffc2",
                         fillOpacity: 0.2,
                         map,
                         bounds: {
@@ -198,10 +421,10 @@ function initMap() {
             case 2:
                 if ((latitude >= coords['chaparral']['south'] && latitude <= coords['chaparral']['north']) && (longitude >= coords['chaparral']['west'] && longitude <= coords['chaparral']['east'])) {
                     const chaparral = new google.maps.Rectangle({
-                        strokeColor: "#104f00",
+                        strokeColor: "#47ffc2",
                         strokeOpacity: 0.8,
                         strokeWeight: 2,
-                        fillColor: "#104f00",
+                        fillColor: "#47ffc2",
                         fillOpacity: 0.2,
                         map,
                         bounds: {
@@ -241,10 +464,10 @@ function initMap() {
             case 3:
                 if ((latitude >= coords['southwestAddition']['south'] && latitude <= coords['southwestAddition']['north']) && (longitude >= coords['southwestAddition']['west'] && longitude <= coords['southwestAddition']['east'])) {
                     const southwestAddition = new google.maps.Rectangle({
-                        strokeColor: "#104f00",
+                        strokeColor: "#47ffc2",
                         strokeOpacity: 0.8,
                         strokeWeight: 2,
-                        fillColor: "#104f00",
+                        fillColor: "#47ffc2",
                         fillOpacity: 0.2,
                         map,
                         bounds: {
@@ -284,10 +507,10 @@ function initMap() {
             case 4:
                 if ((latitude >= coords['magnolia']['south'] && latitude <= coords['magnolia']['north']) && (longitude >= coords['magnolia']['west'] && longitude <= coords['magnolia']['east'])) {
                     const magnolia = new google.maps.Rectangle({
-                        strokeColor: "#104f00",
+                        strokeColor: "#47ffc2",
                         strokeOpacity: 0.8,
                         strokeWeight: 2,
-                        fillColor: "#104f00",
+                        fillColor: "#47ffc2",
                         fillOpacity: 0.2,
                         map,
                         bounds: {
@@ -322,7 +545,8 @@ function initMap() {
                     qNum++;
                 }
                 results.style.textAlign = "center";
-                results.innerHTML = correct+" correct and "+ incorrect+" incorrect.";
+                results.style.color = correct > incorrect ? "#47ffc2" : "#ff0000"
+                results.innerHTML = correct+" correct and "+ incorrect+" incorrect.<br>"+correct+"/5 = "+parseInt((correct/5)*100)+"%";
             break;
         }
 
